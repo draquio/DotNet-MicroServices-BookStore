@@ -1,0 +1,28 @@
+[
+  {
+    "ContainingType": "ShoppingCartService.Controllers.CartController",
+    "Method": "Create",
+    "RelativePath": "api/Cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cart",
+        "Type": "ShoppingCartService.Application.Carts.Commands.CreateCartCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ShoppingCartService.Models.Cart",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]
