@@ -141,3 +141,5 @@ D:\Net\ServiceStore\ShoppingCartService\obj\Debug\net9.0\refint\ShoppingCartServ
 D:\Net\ServiceStore\ShoppingCartService\obj\Debug\net9.0\ShoppingCartService.pdb
 D:\Net\ServiceStore\ShoppingCartService\obj\Debug\net9.0\ShoppingCartService.genruntimeconfig.cache
 D:\Net\ServiceStore\ShoppingCartService\obj\Debug\net9.0\ref\ShoppingCartService.dll
+D:\Net\ServiceStore\ShoppingCartService\obj\Debug\net9.0\ShoppingCartService.sourcelink.json
+D:\Net\ServiceStore\ShoppingCartService\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -171,3 +171,5 @@ D:\Net\ServiceStore\BookService\obj\Debug\net9.0\refint\BookService.dll
 D:\Net\ServiceStore\BookService\obj\Debug\net9.0\BookService.pdb
 D:\Net\ServiceStore\BookService\obj\Debug\net9.0\BookService.genruntimeconfig.cache
 D:\Net\ServiceStore\BookService\obj\Debug\net9.0\ref\BookService.dll
+D:\Net\ServiceStore\BookService\obj\Debug\net9.0\BookService.sourcelink.json
+D:\Net\ServiceStore\BookService\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\Net\\ServiceStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{95713384-FE3A-47DF-AEA6-C478040201AB}|BookServiceTests\\BookServiceTests.csproj|d:\\net\\servicestore\\bookservicetests\\getbooksquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95713384-FE3A-47DF-AEA6-C478040201AB}|BookServiceTests\\BookServiceTests.csproj|solutionrelative:bookservicetests\\getbooksquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\appsettings.json",
-              "RelativeDocumentMoniker": "ShoppingCartService\\appsettings.json",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\appsettings.json",
-              "RelativeToolTip": "ShoppingCartService\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-09T22:38:04.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\Program.cs",
-              "RelativeDocumentMoniker": "ShoppingCartService\\Program.cs",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\Program.cs",
-              "RelativeToolTip": "ShoppingCartService\\Program.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "GetBooksQueryTests.cs",
+              "DocumentMoniker": "D:\\Net\\ServiceStore\\BookServiceTests\\GetBooksQueryTests.cs",
+              "RelativeDocumentMoniker": "BookServiceTests\\GetBooksQueryTests.cs",
+              "ToolTip": "D:\\Net\\ServiceStore\\BookServiceTests\\GetBooksQueryTests.cs",
+              "RelativeToolTip": "BookServiceTests\\GetBooksQueryTests.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAowG4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-09T22:37:34.64Z",
+              "WhenOpened": "2025-10-14T20:14:23.491Z",
               "EditorCaption": ""
             }
           ]

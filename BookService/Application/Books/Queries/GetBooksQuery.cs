@@ -20,8 +20,11 @@ namespace BookService.Application.Books.Queries
 
         public async Task<List<BookDTO>> Handle(GetBooksQuery request, CancellationToken cancellationToken)
         {
-            var books = await _dbContext.Books.Skip((request.Page - 1) * request.Pagesize)
+            var books = await _dbContext.Books
+                .OrderBy(b => b.Id)
+                .Skip((request.Page - 1) * request.Pagesize)
                 .Take(request.Pagesize)
+                .AsNoTracking()
                 .ToListAsync();
 
             if(books is null)

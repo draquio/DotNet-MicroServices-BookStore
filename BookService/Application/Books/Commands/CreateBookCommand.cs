@@ -27,16 +27,24 @@ namespace BookService.Application.Books.Commands
 
         public async Task<Book> Handle(CreateBookCommand request, CancellationToken cancellationToken)
         {
-            var book = new Book
+            try
             {
-                Title = request.Title,
-                PublishDate = request.PublishDate,
-                AuthorGuid = request.AuthorGuid,
-                BookGuid = Guid.NewGuid()
-            };
-            _dbContext.Books.Add(book);
-            await _dbContext.SaveChangesAsync();
-            return book;
+                var book = new Book
+                {
+                    Title = request.Title,
+                    PublishDate = request.PublishDate,
+                    AuthorGuid = request.AuthorGuid,
+                    BookGuid = Guid.NewGuid()
+                };
+                _dbContext.Books.Add(book);
+                await _dbContext.SaveChangesAsync();
+                return book;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
         }
     }
 }

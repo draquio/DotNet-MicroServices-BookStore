@@ -1,32 +1,18 @@
-using Microsoft.EntityFrameworkCore;
-using ShoppingCartService.Application.Carts.Commands;
-using ShoppingCartService.Mappings;
-using ShoppingCartService.Persistence;
+
+
+using ShoppingCartService.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddCartDependencies(builder.Configuration);
+
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 
-builder.Services.AddAutoMapper(config => config.AddMaps(typeof(MappingProfile).Assembly));
-
-// DB
-var connectionString = builder.Configuration.GetConnectionString("CartDatabase");
-builder.Services.AddDbContext<CartContext>(options =>
-{
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
-
-// MediatR
-builder.Services.AddMediatR(config => config.RegisterServicesFromAssemblies(
-    typeof(CreateCartCommand).Assembly));
-
-// Swagger
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
