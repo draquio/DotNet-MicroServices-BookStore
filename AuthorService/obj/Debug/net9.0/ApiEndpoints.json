@@ -58,6 +58,32 @@
   },
   {
     "ContainingType": "AuthorService.Controllers.AuthorController",
+    "Method": "GetByGuid",
+    "RelativePath": "api/Author/{guid}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "AuthorService.Application.DTO.Author.AuthorDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "AuthorService.Controllers.AuthorController",
     "Method": "GetById",
     "RelativePath": "api/Author/{id}",
     "HttpMethod": "GET",

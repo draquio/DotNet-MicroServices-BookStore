@@ -9,8 +9,8 @@ namespace ShoppingCartService.Mappings
     {
         public MappingProfile()
         {
-            CreateMap<CartDetail, CartDetailsDTO>()
-                .ForMember(dto => dto.CreatedAt, options => options.MapFrom(m => m.CreatedAt.ToString("dd/MM/yyyy")));
+            //CreateMap<CartDetail, CartDetailsDTO>()
+            //    .ForMember(dto => dto.PublishDate, options => options.MapFrom(m => m.CreatedAt.ToString("dd/MM/yyyy")));
             CreateMap<Cart, CartDTO>()
                 .ForMember(dto => dto.CartDetails, options => options.MapFrom(m => m.CartDetails));
         }

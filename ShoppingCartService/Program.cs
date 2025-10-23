@@ -1,6 +1,8 @@
 
 
+using Microsoft.EntityFrameworkCore;
 using ShoppingCartService.Configuration;
+using ShoppingCartService.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +17,13 @@ builder.Services.AddOpenApi();
 
 
 var app = builder.Build();
+
+if (app.Configuration.GetValue<bool>("ApplyMigrations"))
+{
+    using var scope = app.Services.CreateScope();
+    var db = scope.ServiceProvider.GetRequiredService<CartContext>();
+    db.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

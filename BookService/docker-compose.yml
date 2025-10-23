@@ -1,0 +1,50 @@
+name: bookservice
+
+networks:
+  book-net: { driver: bridge }
+  edge-net:
+    external: true
+
+volumes:
+  book_mssqldata:
+
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: ${SA_PASSWORD:-Str0ng!Passw0rd}
+      MSSQL_PID: "Developer"
+    ports:
+      - "127.0.0.1:${MSSQL_PORT:-1434}:1433"
+    volumes:
+      - book_mssqldata:/var/opt/mssql
+    healthcheck:
+      test: ["CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/1433'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+      start_period: 60s
+    networks: [book-net]
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "http://+:8080"
+      ConnectionStrings__BookDatabase: "Server=sqlserver;Database=${BOOK_DB:-StoreBook};User Id=sa;Password=${SA_PASSWORD:-Str0ng!Passw0rd};TrustServerCertificate=True"
+      ApplyMigrations: "true"
+      AUTHORS_BASE_URL: ${AUTHORS_BASE_URL:-http://authorservice:8080}
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    ports:
+      - "5102:8080"
+    networks:
+      book-net: {}
+      edge-net:
+        aliases:
+          - bookservice-backend
+    restart: unless-stopped

@@ -4,6 +4,8 @@ using ShoppingCartService.External.Services.Books.Interfaces;
 using ShoppingCartService.External.Services.Books;
 using ShoppingCartService.Persistence;
 using ShoppingCartService.Mappings;
+using ShoppingCartService.External.Services.Author.Interfaces;
+using ShoppingCartService.External.Services.Author;
 
 namespace ShoppingCartService.Configuration
 {
@@ -14,8 +16,6 @@ namespace ShoppingCartService.Configuration
             // Mapping
             services.AddAutoMapper(config => config.AddMaps(typeof(MappingProfile).Assembly));
 
-            // Services
-            services.AddScoped<IBookService, BookService>();
 
             // DB
             var connectionString = config.GetConnectionString("CartDatabase");
@@ -32,15 +32,24 @@ namespace ShoppingCartService.Configuration
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
-
-            // Http client
-            var baseUrl = config["Services:Books"]
-                    ?? throw new InvalidOperationException("Config 'Services:Books' required");
-            services.AddHttpClient<IBookService, BookService>(client =>
+            // AuthorService
+            var authoURL = config["Services:Authors"] ?? Environment.GetEnvironmentVariable("AUTHORS_BASE_URL") ?? "http://localhost:5101";
+            services.AddScoped<IAuthorService, AuthorService>();
+            services.AddHttpClient<IAuthorService, AuthorService>(client =>
             {
-                client.BaseAddress = new Uri(baseUrl);
+                client.BaseAddress = new Uri(authoURL);
                 client.Timeout = TimeSpan.FromSeconds(30);
             });
+
+            // BookService
+            services.AddScoped<IBookService, BookService>();
+            var bookURL = config["Services:Books"] ?? Environment.GetEnvironmentVariable("BOOKS_BASE_URL") ?? "http://localhost:5102";
+            services.AddHttpClient<IBookService, BookService>(client =>
+            {
+                client.BaseAddress = new Uri(bookURL);
+                client.Timeout = TimeSpan.FromSeconds(30);
+            });
+
             return services;
         }
     }

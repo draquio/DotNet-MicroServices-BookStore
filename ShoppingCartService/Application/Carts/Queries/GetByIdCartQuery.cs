@@ -2,6 +2,9 @@
 using Microsoft.EntityFrameworkCore;
 using ShoppingCartService.Application.DTO.CartDetails;
 using ShoppingCartService.Application.DTO.Carts;
+using ShoppingCartService.External.DTOs.Authors;
+using ShoppingCartService.External.DTOs.Books;
+using ShoppingCartService.External.Services.Author.Interfaces;
 using ShoppingCartService.External.Services.Books.Interfaces;
 using ShoppingCartService.Models;
 using ShoppingCartService.Persistence;
@@ -13,11 +16,13 @@ namespace ShoppingCartService.Application.Carts.Queries
     {
         private readonly CartContext _dbContext;
         private readonly IBookService _bookService;
+        private readonly IAuthorService _authorService;
 
-        public GetByIdCartQueryHandler(CartContext dbContext, IBookService bookService)
+        public GetByIdCartQueryHandler(CartContext dbContext, IBookService bookService, IAuthorService authorService)
         {
             _dbContext = dbContext;
             _bookService = bookService;
+            _authorService = authorService;
         }
 
         public async Task<CartDTO> Handle(GetByIdCartQuery request, CancellationToken cancellationToken)
@@ -25,30 +30,39 @@ namespace ShoppingCartService.Application.Carts.Queries
             var cartDetailsDTOs = new List<CartDetailsDTO>();
 
             // Fetch the cart by ID
-            var cart = await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.Id);
+            var cart = await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.Id, cancellationToken);
             if (cart is null) throw new KeyNotFoundException($"Cart with ID {request.Id} not found");
 
             // Fetch cart details associated with the cart
-            var cartDetails = await _dbContext.CartDetails.Where(cd => cd.CartId == cart.Id).ToListAsync();
+            var cartDetails = await _dbContext.CartDetails.Where(cd => cd.CartId == cart.Id).ToListAsync(cancellationToken);
 
-            if (cartDetails.Any())
+            foreach (var item in cartDetails)
             {
-                foreach (var item in cartDetails)
+                BookDTO? book = null;
+                AuthorDTO? author = null;
+                var response = await _bookService.GetBook(item.BookGuid);
+                if (response.book?.AuthorGuid != null)
                 {
-                    var response = await _bookService.GetBook(item.BookGuid);
-                    if (response.result)
+                    var authorGuid = response.book.AuthorGuid ?? Guid.Empty;
+                    var responseAuthor = await _authorService.GetAuthor(authorGuid);
+                    author = responseAuthor.author ?? new AuthorDTO();
+                }
+                if (response.result)
+                {
+                    book = response.book;
+                    var cartDetailsDto = new CartDetailsDTO
                     {
-                        var book = response.book;
-                        var cartDetailsDto = new CartDetailsDTO
-                        {
-                            TitleBook = book.Title,
-                            PublishDate = book.PublishDate,
-                            BookGuid = book.BookGuid.HasValue ? book.BookGuid.Value : Guid.Empty,
-                        };
-                        cartDetailsDTOs.Add(cartDetailsDto);
-                    }
+                        Id = item.Id,
+                        TitleBook = book?.Title,
+                        PublishDate = book?.PublishDate,
+                        BookGuid = book?.BookGuid != null ? book.BookGuid.Value : Guid.Empty,
+                        AuthorBook = $"{author?.Name ?? "" } {author?.Lastname ?? ""}".Trim(),
+
+                    };
+                    cartDetailsDTOs.Add(cartDetailsDto);
                 }
             }
+            
 
             // build and return the CartDTO
             var cartDto = new CartDTO

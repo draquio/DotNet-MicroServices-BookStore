@@ -141,4 +141,4 @@ D:\Net\ServiceStore\AuthorService\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagge
 D:\Net\ServiceStore\AuthorService\bin\Debug\net9.0\FluentValidation.dll
 D:\Net\ServiceStore\AuthorService\bin\Debug\net9.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Net\ServiceStore\AuthorService\bin\Debug\net9.0\AutoMapper.dll
-D:\Net\ServiceStore\AuthorService\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+D:\Net\ServiceStore\AuthorService\obj\Debug\net9.0\AuthorService.sourcelink.json

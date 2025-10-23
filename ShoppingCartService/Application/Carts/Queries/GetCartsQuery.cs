@@ -21,10 +21,7 @@ namespace ShoppingCartService.Application.Carts.Queries
 
         public async Task<List<CartDTO>> Handle(GetCartsQuery request, CancellationToken cancellationToken)
         {
-            var carts = await _dbContext.Carts
-                .Skip((request.Page - 1) * request.Pagesize)
-                .Take(request.Pagesize)
-                .ToListAsync();
+            var carts = await _dbContext.Carts.Skip((request.Page - 1) * request.Pagesize).Take(request.Pagesize).ToListAsync();
             if (carts is null)
             {
                 return new List<CartDTO>();

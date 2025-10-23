@@ -41,5 +41,19 @@ namespace AuthorService.Controllers
             var result = await _mediator.Send(query);
             return Ok(result);
         }
+        [HttpGet("{guid:guid}")]
+        public async Task<ActionResult<AuthorDTO>> GetByGuid(Guid guid)
+        {
+            try
+            {
+                var query = new GetByGuidAuthorQuery(guid);
+                var result = await _mediator.Send(query);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
     }
 }
