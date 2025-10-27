@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "D:\\Net\\ServiceStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{75023438-51ED-429E-9BEF-078A506E1DA5}|ApiGateway\\ApiGateway.csproj|d:\\net\\servicestore\\apigateway\\appsettings.docker.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{75023438-51ED-429E-9BEF-078A506E1DA5}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\appsettings.docker.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\application\\carts\\queries\\getbyidcartquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\application\\carts\\queries\\getbyidcartquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\external\\services\\author\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\external\\services\\author\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|d:\\net\\servicestore\\shoppingcartservice\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B85160F1-1FF9-4563-A0FD-696C1795E3F5}|ShoppingCartService\\ShoppingCartService.csproj|solutionrelative:shoppingcartservice\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{75023438-51ED-429E-9BEF-078A506E1DA5}|ApiGateway\\ApiGateway.csproj|d:\\net\\servicestore\\apigateway\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{75023438-51ED-429E-9BEF-078A506E1DA5}|ApiGateway\\ApiGateway.csproj|solutionrelative:apigateway\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,66 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\appsettings.json",
-              "RelativeDocumentMoniker": "ShoppingCartService\\appsettings.json",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\appsettings.json",
-              "RelativeToolTip": "ShoppingCartService\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "appsettings.Docker.json",
+              "DocumentMoniker": "D:\\Net\\ServiceStore\\ApiGateway\\appsettings.Docker.json",
+              "RelativeDocumentMoniker": "ApiGateway\\appsettings.Docker.json",
+              "ToolTip": "D:\\Net\\ServiceStore\\ApiGateway\\appsettings.Docker.json",
+              "RelativeToolTip": "ApiGateway\\appsettings.Docker.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-23T21:36:44.055Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthorService.cs",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\External\\Services\\Author\\AuthorService.cs",
-              "RelativeDocumentMoniker": "ShoppingCartService\\External\\Services\\Author\\AuthorService.cs",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\External\\Services\\Author\\AuthorService.cs",
-              "RelativeToolTip": "ShoppingCartService\\External\\Services\\Author\\AuthorService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T21:17:13.035Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": ".env",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\.env",
-              "RelativeDocumentMoniker": "ShoppingCartService\\.env",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\.env",
-              "RelativeToolTip": "ShoppingCartService\\.env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-23T21:15:03.11Z",
+              "WhenOpened": "2025-10-27T19:52:17.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GetByIdCartQuery.cs",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\Application\\Carts\\Queries\\GetByIdCartQuery.cs",
-              "RelativeDocumentMoniker": "ShoppingCartService\\Application\\Carts\\Queries\\GetByIdCartQuery.cs",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\Application\\Carts\\Queries\\GetByIdCartQuery.cs",
-              "RelativeToolTip": "ShoppingCartService\\Application\\Carts\\Queries\\GetByIdCartQuery.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAowEwAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T21:12:43.173Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "D:\\Net\\ServiceStore\\ShoppingCartService\\Mappings\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "ShoppingCartService\\Mappings\\MappingProfile.cs",
-              "ToolTip": "D:\\Net\\ServiceStore\\ShoppingCartService\\Mappings\\MappingProfile.cs",
-              "RelativeToolTip": "ShoppingCartService\\Mappings\\MappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T21:10:18.804Z",
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\Net\\ServiceStore\\ApiGateway\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ApiGateway\\appsettings.Development.json",
+              "ToolTip": "D:\\Net\\ServiceStore\\ApiGateway\\appsettings.Development.json",
+              "RelativeToolTip": "ApiGateway\\appsettings.Development.json",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwCcAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-27T19:49:19.712Z",
               "EditorCaption": ""
             }
           ]

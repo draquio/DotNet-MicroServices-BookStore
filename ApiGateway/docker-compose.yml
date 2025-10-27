@@ -1,0 +1,19 @@
+version: "3.9"
+
+networks:
+  edge-net:
+    external: true 
+
+services:
+  apigateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - ASPNETCORE_ENVIRONMENT=Docker
+    ports:
+      - "5272:8080"
+    restart: unless-stopped
+    networks:
+      - edge-net
